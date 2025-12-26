@@ -1,0 +1,24 @@
+{
+  "tests": [
+    {
+      "name": "Register new guest",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "full_name": "Иван Петров",
+        "email": "ivan@example.com",
+        "phone": "+7 999 123 4567"
+      },
+      "expectedStatus": 200
+    },
+    {
+      "name": "Register without name",
+      "method": "POST",
+      "path": "/",
+      "body": {
+        "email": "test@example.com"
+      },
+      "expectedStatus": 400
+    }
+  ]
+}

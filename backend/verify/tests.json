@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "name": "Check non-existent QR code",
+      "method": "GET",
+      "path": "/?code=invalidcode123",
+      "expectedStatus": 404,
+      "expectedBody": {
+        "valid": false
+      },
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "Missing QR code parameter",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 400
+    }
+  ]
+}
